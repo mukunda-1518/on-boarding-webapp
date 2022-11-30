@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import uuid
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,19 +11,20 @@ FOOD_CHOICES = [
     ("Non-Veg", "Non-Vegetarian"),
 ]
 
-
-class Merchant(models.Model):
-    owner = models.ForeignKey(User, null=True)  # It can be one-to-one or foreignkey relationship based on the usecase
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    origin = models.CharField(max_length=100)
+ROLES = [
+    ("Merchant", "Merchant"),
+    ("Consumer", "Consumer")
+]
 
 
-class Item(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    price = models.FloatField()
-    food_type = models.CharField(max_length=30, choices=FOOD_CHOICES)
+class CustomUser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, unique=True)
+    role = models.CharField(max_length=100, choices=ROLES)
+    profile_pic = models.URLField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Store(models.Model):
@@ -30,8 +33,21 @@ class Store(models.Model):
     address = models.TextField()
     lat = models.DecimalField(max_digits=9, decimal_places=6)
     lon = models.DecimalField(max_digits=9, decimal_places=6)
-    merchant = models.ForeignKey(Merchant, on_delete=models.CASCADE)
-    items = models.ManyToManyField(Item, through='StoreItem')
+    merchant = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+class Item(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    price = models.FloatField()
+    food_type = models.CharField(max_length=30, choices=FOOD_CHOICES)
+    store = models.ManyToManyField(Store, through='StoreItem', related_name="items")
+
+    def __str__(self):
+        return self.name
 
 
 class StoreItem(models.Model):
@@ -39,8 +55,22 @@ class StoreItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     is_available = models.BooleanField(default=True)
 
+    def __str__(self):
+        return "{} - {}".format(self.store, self.item)
 
 
+class Order(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4())
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="order_user")
+    merchant = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="order_merchant")
+    store = models.ForeignKey(Store, on_delete=models.CASCADE)
+    items = models.ManyToManyField(Item, through="OrderItem", related_name="orders")
+
+    def __str__(self):
+        return self.id
 
 
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
 
