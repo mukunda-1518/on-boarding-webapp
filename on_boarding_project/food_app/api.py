@@ -506,7 +506,8 @@ class OrderResource(ModelResource, CommonMethods):
         order_obj = Order.objects.create(store=store_obj, merchant=merchant_obj, user=custom_user_obj)
         orders_list = []
         for item_id in item_ids:
-            OrderItem(order=order_obj, item_id=item_id)
+            order_item = OrderItem(order=order_obj, item_id=item_id)
+            orders_list.append(order_item)
         OrderItem.objects.bulk_create(orders_list)
 
         return self.create_response(
@@ -514,12 +515,128 @@ class OrderResource(ModelResource, CommonMethods):
                     {'order_id': order_obj.id, 'success': True}
                 )
 
+    def get_order(self, request, **kwargs):
+        order_id = kwargs['pk']
+        self.method_check(request, allowed=['get'])
+        self.is_authenticated(request)
+        username = request.user
+        custom_user_obj = self.get_custom_user(username)
 
+        try:
+            order_obj = Order.objects.select_related('store', 'merchant').get(id=order_id, user=custom_user_obj)
+            store_obj = order_obj.store
+            store_details = {
+                'id': store_obj.id,
+                'name': store_obj.name,
+                'city': store_obj.city,
+                'address': store_obj.address,
+                'lat': store_obj.lat,
+                'lon': store_obj.lon
+            }
+            items = []
+            for item_obj in order_obj.items.all():
+                item = {
+                    "id": item_obj.id,
+                    "name": item_obj.name,
+                    "description": item_obj.description,
+                    "price": item_obj.price,
+                    "food_type": item_obj.food_type,
+                }
+                items.append(item)
+            order_details = {
+                'store_details': store_details,
+                'items': items
+            }
+            return self.create_response(
+                request,
+                {'order_details': order_details}
+            )
 
+        except Order.DoesNotExist:
+            return self.create_response(
+                request,
+                {'message': 'Order not found'},
+                HttpNotFound
+            )
 
+    def get_orders(self, request, **kwargs):
+        self.method_check(request, allowed=['get'])
+        self.is_authenticated(request)
+        username = request.user
+        custom_user_obj = self.get_custom_user(username)
 
+        order_objs = Order.objects.select_related('store', 'merchant').filter(user=custom_user_obj)
+        order_details = []
+        for order_obj in order_objs:
+            store_obj = order_obj.store
+            store_details = {
+                'id': store_obj.id,
+                'name': store_obj.name,
+                'city': store_obj.city,
+                'address': store_obj.address,
+                'lat': store_obj.lat,
+                'lon': store_obj.lon
+            }
+            items = []
+            for item_obj in order_obj.items.all():
+                item = {
+                    "id": item_obj.id,
+                    "name": item_obj.name,
+                    "description": item_obj.description,
+                    "price": item_obj.price,
+                    "food_type": item_obj.food_type,
+                }
+                items.append(item)
+            order_details.append({
+                'order_id': order_obj.id,
+                'store_details': store_details,
+                'items': items
+            })
+        return self.create_response(
+            request,
+            {'order_details': order_details}
+        )
 
+    def all_orders(self, request, **kwargs):
+        self.method_check(request, allowed=['get'])
+        self.is_authenticated(request)
+        username = request.user
+        custom_user_obj = self.get_custom_user(username)
+        if custom_user_obj.role == "Consumer":
+            return self.create_response(
+                request,
+                {'message': "User do not have access to see all orders"},
+                HttpUnauthorized
+            )
 
-
-
-
+        order_objs = Order.objects.select_related('store', 'merchant').filter(merchant=custom_user_obj)
+        order_details = []
+        for order_obj in order_objs:
+            store_obj = order_obj.store
+            store_details = {
+                'id': store_obj.id,
+                'name': store_obj.name,
+                'city': store_obj.city,
+                'address': store_obj.address,
+                'lat': store_obj.lat,
+                'lon': store_obj.lon
+            }
+            items = []
+            for item_obj in order_obj.items.all():
+                item = {
+                    "id": item_obj.id,
+                    "name": item_obj.name,
+                    "description": item_obj.description,
+                    "price": item_obj.price,
+                    "food_type": item_obj.food_type,
+                }
+                items.append(item)
+            order_details.append({
+                'order_id': order_obj.id,
+                'store_details': store_details,
+                'items': items
+            })
+        return self.create_response(
+            request,
+            {'order_details': order_details}
+        )

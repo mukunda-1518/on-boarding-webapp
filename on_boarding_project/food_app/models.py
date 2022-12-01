@@ -60,17 +60,18 @@ class StoreItem(models.Model):
 
 
 class Order(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4())
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="order_user")
     merchant = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="order_merchant")
     store = models.ForeignKey(Store, on_delete=models.CASCADE)
     items = models.ManyToManyField(Item, through="OrderItem", related_name="orders")
 
     def __str__(self):
-        return self.id
+        return "order - {}".format(self.id)
 
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return "order:{} - item:{}".format(self.order.id, self.item.id)
