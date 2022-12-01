@@ -1,4 +1,5 @@
 import json
+import os
 
 import structlog
 from tastypie import fields
@@ -12,14 +13,14 @@ from .mixins import CommonMethods
 from .models import *
 from django.contrib.auth import get_user_model
 from django.conf.urls import url, include
-from django.core import serializers
-from tastypie.utils import trailing_slash
 from django.contrib.auth import authenticate
 from django.db.models import *
 
+
 User = get_user_model()
 
-log = structlog.get_logger()
+log = structlog.getLogger(__name__)
+
 
 
 class UserResource(ModelResource):
@@ -244,7 +245,7 @@ class StoreResource(ModelResource, CommonMethods):
                     "log": obj.lon,
                 }
                 store_details.append(store)
-            log.info("{} has accessed the store list".format(custom_user_obj.username))
+            log.info("{} has accessed the store list".format(custom_user_obj.name))
             return self.create_response(
                 request,
                 {'stores': store_details, 'success': True}

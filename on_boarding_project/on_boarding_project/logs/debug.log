@@ -1,0 +1,12 @@
+[37m INFO     2022-12-01 17:10:24,607   12536 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 2111[0m
+[37m INFO     2022-12-01 17:10:24,607   12536 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 2111[0m
+[37m INFO     2022-12-01 17:17:09,328   12536 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 2111[0m
+[37m INFO     2022-12-01 17:17:09,328   12536 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 2111[0m
+[37m INFO     2022-12-01 17:17:12,744   12536 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 910[0m
+[37m INFO     2022-12-01 17:17:12,744   12536 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 910[0m
+[37m INFO     2022-12-01 17:17:26,836   12536 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 567[0m
+[37m INFO     2022-12-01 17:17:26,836   12536 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 567[0m
+[31m ERROR    2022-12-01 17:26:53,913   12536 --- 124 [django.server] log_message : "GET /api/v1/get_stores/?username=Merchant&api_key=9e87b5a7b9565ea06baa7a0e5dfafd7e1e45b34a HTTP/1.1" 500 584[0m
+[31m ERROR    2022-12-01 17:26:53,913   12536 --- 124 [django.server] log_message : "GET /api/v1/get_stores/?username=Merchant&api_key=9e87b5a7b9565ea06baa7a0e5dfafd7e1e45b34a HTTP/1.1" 500 584[0m
+[37m INFO     2022-12-01 17:28:18,918   19792 --- 124 [django.server] log_message : "GET /api/v1/get_stores/?username=Merchant&api_key=9e87b5a7b9565ea06baa7a0e5dfafd7e1e45b34a HTTP/1.1" 200 918[0m
+[37m INFO     2022-12-01 17:28:18,918   19792 --- 124 [django.server] log_message : "GET /api/v1/get_stores/?username=Merchant&api_key=9e87b5a7b9565ea06baa7a0e5dfafd7e1e45b34a HTTP/1.1" 200 918[0m
