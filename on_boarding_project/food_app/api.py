@@ -1,5 +1,6 @@
 import json
 
+import structlog
 from tastypie import fields
 from tastypie.authentication import ApiKeyAuthentication, BasicAuthentication, Authentication
 from tastypie.authorization import Authorization
@@ -18,18 +19,22 @@ from django.db.models import *
 
 User = get_user_model()
 
+log = structlog.get_logger()
+
 
 class UserResource(ModelResource):
 
     class Meta:
         queryset = User.objects.all()
         resource_name = "user"
-        # fields = ["username", "email", "password", "is_staff"]
         allowed_methods = ["get", "post", "put", "delete"]
         authentication = Authentication()
         authorization = Authorization()
 
     def obj_create(self, bundle, request=None, **kwargs):
+        """
+            It just create new user and doesn't return apikey deatils
+        """
         username = bundle.data.pop('username')
         password = bundle.data.pop('password')
         role = bundle.data.pop('role')
@@ -53,6 +58,7 @@ class UserResource(ModelResource):
 
     def signup(self, request, **kwargs):
         """"
+            Creates new user and return the apikey, username
         """
         data = self.deserialize(request, request.body, format=request.META.get(
             'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
@@ -73,6 +79,7 @@ class UserResource(ModelResource):
         api_key = ApiKey.objects.get(user=user)
         custom_user_obj = CustomUser.objects.get(user__username=user)
         role = custom_user_obj.role
+        log.info("{} with email - {} with role - {} successfully registered".format(custom_user_obj.name, user.email, custom_user_obj.role))
         return self.create_response(request, {
             'api_key': api_key.key,
             'username': username,
@@ -81,6 +88,9 @@ class UserResource(ModelResource):
         })
 
     def login(self, request, **kwargs):
+        """
+            Login Endpoint - If user doesn't have apikey entry it creates one and returns apikey and username
+        """
         self.method_check(request, allowed=['post'])
         data = self.deserialize(request, request.body, format=request.META.get(
             'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
@@ -94,6 +104,7 @@ class UserResource(ModelResource):
                 api_key = ApiKey.objects.create(user=user)
             custom_user_obj = CustomUser.objects.get(user__username=user)
             role = custom_user_obj.role
+            log.info("{} with email - {} with role - {} successfully logged in".format(custom_user_obj.name, user.email, custom_user_obj.role))
             return self.create_response(request, {
                 'api_key': api_key.key,
                 'username': username,
@@ -109,6 +120,11 @@ class UserResource(ModelResource):
 
 
 class CustomUserResource(ModelResource):
+
+    """
+     This is like User resource along with role details
+    """
+
     user = fields.OneToOneField(UserResource, 'user', full=True)
 
     class Meta:
@@ -120,6 +136,10 @@ class CustomUserResource(ModelResource):
 
 
 class StoreResource(ModelResource, CommonMethods):
+    """
+        All the endpoints in it are accessible only user with role as Merchant
+    """
+
     merchant = fields.ForeignKey(CustomUserResource, 'merchant', full=True)
 
     class Meta:
@@ -149,6 +169,7 @@ class StoreResource(ModelResource, CommonMethods):
         if custom_user_obj.role == "Merchant":
             store = Store(merchant=custom_user_obj, **data)
             store.save()
+            log.info("store with name: {} is created by {}".format(store.name, username))
             return self.create_response(request, {
                 "name": store.name,
                 "city": store.city,
@@ -167,6 +188,10 @@ class StoreResource(ModelResource, CommonMethods):
             )
 
     def get_store(self, request, **kwargs):
+        """
+        To get all the store details of a user with role as Merchant
+        """
+
         self.method_check(request, allowed=['get'])
         self.is_authenticated(request)
         store_id = kwargs['pk']
@@ -183,6 +208,7 @@ class StoreResource(ModelResource, CommonMethods):
                     "lat": obj.lat,
                     "log": obj.lon
                 }
+                log.info("{} with role - {} - accessed store details".format(username, custom_user_obj.role))
                 return self.create_response(request, {
                     'success': True,
                     'store_details': store_details
@@ -218,6 +244,7 @@ class StoreResource(ModelResource, CommonMethods):
                     "log": obj.lon,
                 }
                 store_details.append(store)
+            log.info("{} has accessed the store list".format(custom_user_obj.username))
             return self.create_response(
                 request,
                 {'stores': store_details, 'success': True}
@@ -298,6 +325,11 @@ class StoreResource(ModelResource, CommonMethods):
 
 
 class ItemResource(ModelResource, CommonMethods):
+
+    """
+    creating, deleting, updating stores are only done by user with Merchant role
+    Get Items - List view and Detailed view can be accessed by any user who had registered
+    """
 
     store = fields.ToManyField(StoreResource, 'store', full=True)
 
@@ -470,6 +502,11 @@ class ItemResource(ModelResource, CommonMethods):
 
 class OrderResource(ModelResource, CommonMethods):
 
+    """
+        Creating orders, getting order detailed and list view are user specific.
+        All Orders endpoint is accessed only by the user with merchant role
+    """
+
     user = fields.ToOneField(CustomUserResource, 'user', full=True)
     merchant = fields.ToOneField(CustomUserResource, 'merchant', full=True)
     store = fields.ToOneField(StoreResource, 'store', full=True)
@@ -547,6 +584,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             }
+            log.info("Only requested order details of user - {} are shown".format(custom_user_obj.name))
             return self.create_response(
                 request,
                 {'order_details': order_details}
@@ -592,6 +630,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             })
+        log.info("All the order details of the user - {} are shown".format(custom_user_obj.name))
         return self.create_response(
             request,
             {'order_details': order_details}
@@ -636,6 +675,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             })
+        log.info("Orders associated with all the stores of the merchant - {} are shown".format(custom_user_obj.role), user=request.user.username)
         return self.create_response(
             request,
             {'order_details': order_details}
