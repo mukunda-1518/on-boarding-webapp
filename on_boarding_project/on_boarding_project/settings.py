@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+import structlog
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -120,3 +122,69 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            '()': 'colorlog.ColoredFormatter',
+            "format": "%(log_color)s %(levelname)-8s %(asctime)s   %(process)s --- "
+            "%(lineno)-2s [%(name)s] %(funcName)-8s : %(message)s",
+            'log_colors': {
+                'DEBUG':    'bold_black',
+                'INFO':     'white',
+                'WARNING':  'yellow',
+                'ERROR':    'red',
+                'CRITICAL': 'bold_red',
+            },
+        },
+        "json_formatter": {
+            "()": structlog.stdlib.ProcessorFormatter,
+            "processor": structlog.processors.JSONRenderer(),
+        },
+        "plain_console": {
+            "()": structlog.stdlib.ProcessorFormatter,
+            "processor": structlog.dev.ConsoleRenderer(),
+        },
+        "key_value": {
+            "()": structlog.stdlib.ProcessorFormatter,
+            "processor": structlog.processors.KeyValueRenderer(key_order=['timestamp', 'level', 'event', '_logger']),
+        },
+    },
+    'handlers': {
+        'file': {
+            'class': 'logging.FileHandler',
+            'filename': 'on_boarding_project/logs/debug.log',
+            'formatter': 'verbose',
+        },
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "plain_console",
+        },
+        "json_file": {
+            "class": "logging.handlers.WatchedFileHandler",
+            "filename": "on_boarding_project/logs/json.log",
+            "formatter": "json_formatter",
+        },
+        "flat_line_file": {
+            "class": "logging.handlers.WatchedFileHandler",
+            "filename": "on_boarding_project/logs/flat_line.log",
+            "formatter": "key_value",
+        },
+    },
+    'root': {
+        'handlers': ['console', 'file'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': "INFO",
+        },
+        "django_structlog": {
+            "handlers": ["flat_line_file", "json_file"],
+            "level": "INFO",
+        },
+    },
+}
