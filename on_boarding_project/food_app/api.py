@@ -7,7 +7,7 @@ import jwt
 import structlog
 from tastypie import fields
 from tastypie.authentication import ApiKeyAuthentication, BasicAuthentication, Authentication
-from tastypie.authorization import Authorization
+from tastypie.authorization import Authorization, DjangoAuthorization
 from tastypie.http import HttpUnauthorized, HttpCreated, HttpNotFound
 from tastypie.models import ApiKey
 from tastypie.resources import ModelResource, ALL
@@ -25,6 +25,29 @@ User = get_user_model()
 log = structlog.getLogger(__name__)
 
 
+class JWTAuthorization(DjangoAuthorization):
+
+    def is_authenticated(self, request, **kwargs):
+        token = request.META.get("HTTP_AUTHORIZATION", None)
+        token = token.split(" ")[1]
+        try:
+            payload = jwt.decode(
+                token, settings.SECRET_KEY, algorithms=['HS256'])
+            user = User.objects.get(pk=payload['id'])
+            request.user = user
+            if user.is_active:
+                request.user = user
+                return True
+            else:
+                return False
+        except jwt.ExpiredSignatureError:
+            return False
+        except jwt.DecodeError:
+            return False
+        except User.DoesNotExist:
+            return False
+
+
 class UserResource(ModelResource):
 
     class Meta:
@@ -34,24 +57,6 @@ class UserResource(ModelResource):
         authentication = Authentication()
         authorization = Authorization()
 
-    def obj_create(self, bundle, request=None, **kwargs):
-        """
-            It just create new user and doesn't return apikey deatils
-        """
-        username = bundle.data.pop('username')
-        password = bundle.data.pop('password')
-        role = bundle.data.pop('role')
-        email = bundle.data.pop('email')
-        is_staff = bundle.data.pop('is_staff')
-        user = User.objects.create(username=username, password=password, email=email, is_staff=is_staff)
-        user.set_password(password)
-        user.save()
-        CustomUser.objects.create(
-            user=user,
-            name=username,
-            role=role
-        )
-
     def prepend_urls(self):
 
         return [
@@ -59,48 +64,17 @@ class UserResource(ModelResource):
             url(r"^user/login/$", self.wrap_view('login'), name='api_login'),
         ]
 
-    # def signup(self, request, **kwargs):
-    #     """"
-    #         Creates new user and return the apikey, username
-    #     """
-    #     data = self.deserialize(request, request.body, format=request.META.get(
-    #         'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
-    #     username = data['username']
-    #     password = data['password']
-    #     role = data['role']
-    #     email = data['email']
-    #     is_staff = data['is_staff']
-    #
-    #     user = User.objects.create(username=username, password=password, email=email, is_staff=is_staff)
-    #     user.set_password(password)
-    #     user.save()
-    #     CustomUser.objects.create(
-    #         user=user,
-    #         name=username,
-    #         role=role
-    #     )
-    #     api_key = ApiKey.objects.get(user=user)
-    #     custom_user_obj = CustomUser.objects.get(user__username=user)
-    #     role = custom_user_obj.role
-    #     log.info("{} with email - {} with role - {} successfully registered".format(custom_user_obj.name, user.email, custom_user_obj.role))
-    #     return self.create_response(request, {
-    #         'api_key': api_key.key,
-    #         'username': username,
-    #         'role': role,
-    #         'success': True
-    #     })
-
-    def get_token(self, username):
+    def get_token(self, u_id):
         token = jwt.encode({
-            'id': username,
-            'exp': datetime.utcnow() + timedelta(days=10),
+            'id': u_id,
+            'exp': datetime.utcnow() + timedelta(days=40),
             'iat': datetime.utcnow()
         }, settings.SECRET_KEY, algorithm='HS256')
         return token
 
     def signup(self, request, **kwargs):
         """"
-            Creates new user and return the token, username
+            Creates new user and return the token, username, role
         """
         data = self.deserialize(request, request.body, format=request.META.get(
             'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
@@ -120,18 +94,18 @@ class UserResource(ModelResource):
         )
         custom_user_obj = CustomUser.objects.get(user__username=user)
         role = custom_user_obj.role
-        token = self.get_token(username)
+        token = self.get_token(user.id)
         log.info("{} with email - {} with role - {} successfully registered".format(custom_user_obj.name, user.email, custom_user_obj.role))
         return self.create_response(request, {
-            'token': token,
-            'username': username,
+            'access_token': token,
+            'id': user.id,
             'role': role,
             'success': True
         })
 
     def login(self, request, **kwargs):
         """
-            Login Endpoint - If user doesn't have apikey entry it creates one and returns apikey and username
+            Login Endpoint - On successful login, username,token, role are provided in response
         """
         self.method_check(request, allowed=['post'])
         data = self.deserialize(request, request.body, format=request.META.get(
@@ -140,12 +114,12 @@ class UserResource(ModelResource):
         password = data['password']
         user = authenticate(username=username, password=password)
         if user:
-            token = self.get_token(username)
+            token = self.get_token(user.id)
             custom_user_obj = CustomUser.objects.get(user__username=user)
             role = custom_user_obj.role
             log.info("{} with email - {} with role - {} successfully logged in".format(custom_user_obj.name, user.email, custom_user_obj.role))
             return self.create_response(request, {
-                'token': token,
+                'access_token': token,
                 'username': username,
                 'role': role,
                 'success': True
@@ -156,37 +130,6 @@ class UserResource(ModelResource):
                 {'success': False, 'message': 'User is not registered or user is inactive state'},
                 HttpUnauthorized
             )
-
-    # def login(self, request, **kwargs):
-    #     """
-    #         Login Endpoint - If user doesn't have apikey entry it creates one and returns apikey and username
-    #     """
-    #     self.method_check(request, allowed=['post'])
-    #     data = self.deserialize(request, request.body, format=request.META.get(
-    #         'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
-    #     username = data['username']
-    #     password = data['password']
-    #     user = authenticate(username=username, password=password)
-    #     if user:
-    #         try:
-    #             api_key = ApiKey.objects.get(user=user)
-    #         except ApiKey.DoesNotExist:
-    #             api_key = ApiKey.objects.create(user=user)
-    #         custom_user_obj = CustomUser.objects.get(user__username=user)
-    #         role = custom_user_obj.role
-    #         log.info("{} with email - {} with role - {} successfully logged in".format(custom_user_obj.name, user.email, custom_user_obj.role))
-    #         return self.create_response(request, {
-    #             'api_key': api_key.key,
-    #             'username': username,
-    #             'role': role,
-    #             'success': True
-    #         })
-    #     else:
-    #         return self.create_response(
-    #             request,
-    #             {'success': False, 'message': 'User is not registered or user is inactive state'},
-    #             HttpUnauthorized
-    #         )
 
 
 class CustomUserResource(ModelResource):
@@ -216,8 +159,8 @@ class StoreResource(ModelResource, CommonMethods):
         queryset = Store.objects.all()
         resource_name = "store"
         allowed_methods = ['get', 'post', 'put', 'patch', 'delete']
-        authentication = ApiKeyAuthentication()
-        authorization = Authorization()
+        authentication = JWTAuthorization()
+        authorization = JWTAuthorization()
 
     def prepend_urls(self):
 
@@ -299,7 +242,10 @@ class StoreResource(ModelResource, CommonMethods):
     def get_stores(self, request, **kwargs):
         self.method_check(request, allowed=['get'])
         self.is_authenticated(request)
+        # self.is_authenticated(request)
+        # print("Hi" * 10)
         username = request.user
+        print(username)
         custom_user_obj = self.get_custom_user(username)
         if custom_user_obj.role == "Merchant":
             store_objs = Store.objects.filter(merchant=custom_user_obj)
@@ -407,8 +353,8 @@ class ItemResource(ModelResource, CommonMethods):
         queryset = Item.objects.all()
         resource_name = "item"
         allowed_methods = ['get', 'post', 'put', 'patch', 'delete']
-        authentication = ApiKeyAuthentication()
-        authorization = Authorization()
+        authentication = JWTAuthorization()
+        authorization = JWTAuthorization()
 
     def prepend_urls(self):
 
@@ -586,8 +532,8 @@ class OrderResource(ModelResource, CommonMethods):
         queryset = Order.objects.all()
         resource_name = "order"
         allowed_methods = ['post', 'get']
-        authentication = ApiKeyAuthentication()
-        authorization = Authorization()
+        authentication = JWTAuthorization()
+        authorization = JWTAuthorization()
 
     def prepend_urls(self):
 
