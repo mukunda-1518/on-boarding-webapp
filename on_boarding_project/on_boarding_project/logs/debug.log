@@ -116,3 +116,173 @@
 [37m INFO     2022-12-02 18:22:40,388   13700 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
 [31m ERROR    2022-12-02 18:22:49,529   13700 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 500 907[0m
 [31m ERROR    2022-12-02 18:22:49,529   13700 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 500 907[0m
+[33m WARNING  2022-12-02 18:25:05,513   2868 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-02 18:25:05,513   2868 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-02 18:25:05,513   2868 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-02 18:25:05,513   2868 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[37m INFO     2022-12-02 18:25:15,493   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-02 18:25:15,493   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-02 18:25:35,535   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-02 18:25:35,535   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-02 18:25:39,072   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-02 18:25:39,072   2868 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:14:01,969   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:14:01,969   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:14:06,128   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:14:06,128   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[33m WARNING  2022-12-05 10:15:16,940   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:15:16,940   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 0[0m
+[31m ERROR    2022-12-05 10:16:39,779   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 500 910[0m
+[31m ERROR    2022-12-05 10:16:39,779   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 500 910[0m
+[37m INFO     2022-12-05 10:17:18,582   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:17:18,582   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:17:46,836   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:17:46,836   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:19:06,071   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:19:06,071   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[33m WARNING  2022-12-05 10:19:28,000   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:19:28,000   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:19:39,997   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:19:39,997   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:19:40,002   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:19:40,002   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:19:45,480   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:19:45,480   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:19:45,483   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:19:45,483   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:20:13,503   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:20:13,503   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:20:13,503   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:20:13,503   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:20:24,101   19940 --- 124 [django.server] log_message : "PUT /api/v1/get_stores/2/update_item/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:20:24,101   19940 --- 124 [django.server] log_message : "PUT /api/v1/get_stores/2/update_item/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:20:35,017   19940 --- 124 [django.server] log_message : "PUT /api/v1/get_stores/2/update_item/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:20:35,017   19940 --- 124 [django.server] log_message : "PUT /api/v1/get_stores/2/update_item/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:20:51,494   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/15/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:20:51,494   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/15/ HTTP/1.1" 401 56[0m
+[37m INFO     2022-12-05 10:21:02,509   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 773[0m
+[37m INFO     2022-12-05 10:21:02,509   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 773[0m
+[37m INFO     2022-12-05 10:21:45,155   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:21:45,155   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[33m WARNING  2022-12-05 10:22:00,108   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:22:00,108   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-05 10:22:00,194   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 773[0m
+[37m INFO     2022-12-05 10:22:00,194   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 773[0m
+[33m WARNING  2022-12-05 10:22:00,267   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:22:00,267   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:22:00,270   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:22:00,270   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:22:00,362   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:22:00,362   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:22:00,365   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[33m WARNING  2022-12-05 10:22:00,365   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[31m ERROR    2022-12-05 10:22:18,006   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 500 910[0m
+[31m ERROR    2022-12-05 10:22:18,006   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 500 910[0m
+[33m WARNING  2022-12-05 10:22:26,831   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:22:26,831   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 401 56[0m
+[37m INFO     2022-12-05 10:22:46,075   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:22:46,075   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:23:03,963   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:23:03,963   19940 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-05 10:23:26,979   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 876[0m
+[37m INFO     2022-12-05 10:23:26,979   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 876[0m
+[33m WARNING  2022-12-05 10:23:33,178   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:23:33,178   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/get_items/4/[0m
+[33m WARNING  2022-12-05 10:23:33,180   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:23:33,180   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/4/ HTTP/1.1" 404 42[0m
+[33m WARNING  2022-12-05 10:23:38,502   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:23:38,502   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:23:38,505   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[33m WARNING  2022-12-05 10:23:38,505   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[33m WARNING  2022-12-05 10:23:42,039   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:23:42,039   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/10/delete_item/9/[0m
+[33m WARNING  2022-12-05 10:23:42,040   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[33m WARNING  2022-12-05 10:23:42,040   19940 --- 124 [django.server] log_message : "DELETE /api/v1/get_stores/10/delete_item/9/ HTTP/1.1" 404 56[0m
+[37m INFO     2022-12-05 10:23:45,446   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 876[0m
+[37m INFO     2022-12-05 10:23:45,446   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 876[0m
+[37m INFO     2022-12-05 10:24:00,463   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/12/ HTTP/1.1" 200 152[0m
+[37m INFO     2022-12-05 10:24:00,463   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/12/ HTTP/1.1" 200 152[0m
+[37m INFO     2022-12-05 10:25:10,990   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[37m INFO     2022-12-05 10:25:10,990   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[33m WARNING  2022-12-05 10:26:01,144   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:26:01,144   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 401 0[0m
+[31m ERROR    2022-12-05 10:26:09,418   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 500 909[0m
+[31m ERROR    2022-12-05 10:26:09,418   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 500 909[0m
+[37m INFO     2022-12-05 10:26:19,282   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[37m INFO     2022-12-05 10:26:19,282   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[31m ERROR    2022-12-05 10:26:34,494   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 500 909[0m
+[31m ERROR    2022-12-05 10:26:34,494   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 500 909[0m
+[37m INFO     2022-12-05 10:26:39,888   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[37m INFO     2022-12-05 10:26:39,888   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[33m WARNING  2022-12-05 10:26:56,992   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_orders/10/[0m
+[33m WARNING  2022-12-05 10:26:56,992   19940 --- 152 [django.request] get_response : Not Found: /api/v1/get_orders/10/[0m
+[33m WARNING  2022-12-05 10:26:56,993   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/10/ HTTP/1.1" 404 30[0m
+[33m WARNING  2022-12-05 10:26:56,993   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/10/ HTTP/1.1" 404 30[0m
+[37m INFO     2022-12-05 10:27:03,398   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[37m INFO     2022-12-05 10:27:03,398   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/ HTTP/1.1" 200 1271[0m
+[37m INFO     2022-12-05 10:27:21,417   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/4/ HTTP/1.1" 200 363[0m
+[37m INFO     2022-12-05 10:27:21,417   19940 --- 124 [django.server] log_message : "GET /api/v1/get_orders/4/ HTTP/1.1" 200 363[0m
+[37m INFO     2022-12-05 10:28:29,812   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:28:29,812   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:28:50,157   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[37m INFO     2022-12-05 10:28:50,157   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[37m INFO     2022-12-05 10:28:50,549   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[37m INFO     2022-12-05 10:28:50,549   19940 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 32[0m
+[37m INFO     2022-12-05 10:29:06,200   19940 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 3398[0m
+[37m INFO     2022-12-05 10:29:06,200   19940 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 200 3398[0m
+[37m INFO     2022-12-05 10:30:04,828   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:30:04,828   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[31m ERROR    2022-12-05 10:30:21,191   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 804[0m
+[31m ERROR    2022-12-05 10:30:21,191   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 804[0m
+[31m ERROR    2022-12-05 10:31:40,216   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 812[0m
+[31m ERROR    2022-12-05 10:31:40,216   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 812[0m
+[31m ERROR    2022-12-05 10:31:46,545   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 3458[0m
+[31m ERROR    2022-12-05 10:31:46,545   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 3458[0m
+[31m ERROR    2022-12-05 10:32:01,861   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 3458[0m
+[31m ERROR    2022-12-05 10:32:01,861   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 3458[0m
+[37m INFO     2022-12-05 10:32:15,598   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 103[0m
+[37m INFO     2022-12-05 10:32:15,598   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 103[0m
+[31m ERROR    2022-12-05 10:32:31,881   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 500 909[0m
+[31m ERROR    2022-12-05 10:32:31,881   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 500 909[0m
+[37m INFO     2022-12-05 10:33:06,028   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 103[0m
+[37m INFO     2022-12-05 10:33:06,028   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 103[0m
+[37m INFO     2022-12-05 10:34:00,194   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:34:00,194   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[33m WARNING  2022-12-05 10:34:19,000   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:34:19,000   19940 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:34:37,411   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:34:37,411   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:34:50,418   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/4/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:34:50,418   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/4/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:00,400   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:00,400   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:09,858   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:09,858   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:15,523   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:35:15,523   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:35:23,201   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:23,201   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:28,686   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-05 10:35:28,686   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 401 56[0m
+[37m INFO     2022-12-05 10:38:15,963   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:38:15,963   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:38:28,568   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:38:28,568   19940 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-05 10:38:41,125   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-05 10:38:41,125   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[33m WARNING  2022-12-05 10:38:46,336   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/10/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:38:46,336   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/10/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-05 10:38:53,184   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/10/ HTTP/1.1" 200 17[0m
+[37m INFO     2022-12-05 10:38:53,184   19940 --- 124 [django.server] log_message : "PUT /api/v1/update_store/10/ HTTP/1.1" 200 17[0m
+[33m WARNING  2022-12-05 10:39:00,461   19940 --- 152 [django.request] get_response : Not Found: /api/v1/delete_store/5/[0m
+[33m WARNING  2022-12-05 10:39:00,461   19940 --- 152 [django.request] get_response : Not Found: /api/v1/delete_store/5/[0m
+[33m WARNING  2022-12-05 10:39:00,463   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 404 33[0m
+[33m WARNING  2022-12-05 10:39:00,463   19940 --- 124 [django.server] log_message : "DELETE /api/v1/delete_store/5/ HTTP/1.1" 404 33[0m
+[37m INFO     2022-12-05 10:39:10,260   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-05 10:39:10,260   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[33m WARNING  2022-12-05 10:39:19,819   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-05 10:39:19,819   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-05 10:39:25,528   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
+[37m INFO     2022-12-05 10:39:25,528   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
+[37m INFO     2022-12-05 10:39:32,309   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
+[37m INFO     2022-12-05 10:39:32,309   19940 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
