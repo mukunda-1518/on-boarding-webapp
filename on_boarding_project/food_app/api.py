@@ -114,7 +114,7 @@ class UserResource(ModelResource):
         custom_user_obj = CustomUser.objects.get(user__username=user)
         role = custom_user_obj.role
         token = self.get_token(user.id)
-        log.info("{} with email - {} with role - {} successfully registered".format(custom_user_obj.name, user.email, custom_user_obj.role))
+        log.info("successfully_registered",user=custom_user_obj.name, role=custom_user_obj.role)
         return self.create_response(request, {
             'access_token': token,
             'id': user.id,
@@ -136,7 +136,7 @@ class UserResource(ModelResource):
             token = self.get_token(user.id)
             custom_user_obj = CustomUser.objects.get(user__username=user)
             role = custom_user_obj.role
-            log.info("{} with email - {} with role - {} successfully logged in".format(custom_user_obj.name, user.email, custom_user_obj.role))
+            log.info("logged_in",user=custom_user_obj.name, role=custom_user_obj.role)
             return self.create_response(request, {
                 'access_token': token,
                 'username': username,
@@ -237,9 +237,9 @@ class StoreResource(ModelResource, CommonMethods):
                     "city": obj.city,
                     "Address": obj.address,
                     "lat": obj.lat,
-                    "log": obj.lon
+                    "lon": obj.lon
                 }
-                log.info("{} with role - {} - accessed store details".format(username, custom_user_obj.role))
+                log.info("got_store_details", user=username, store_id=obj.id)
                 return self.create_response(request, {
                     'success': True,
                     'store_details': store_details
@@ -272,10 +272,10 @@ class StoreResource(ModelResource, CommonMethods):
                     "city": obj.city,
                     "Address": obj.address,
                     "lat": obj.lat,
-                    "log": obj.lon,
+                    "lon": obj.lon,
                 }
                 store_details.append(store)
-            log.info("{} has accessed the store list".format(custom_user_obj.name))
+            log.info("all_store_details", user=username)
             return self.create_response(
                 request,
                 {'stores': store_details, 'success': True}
@@ -695,7 +695,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             })
-        log.info("All the order details of the user - {} are shown".format(custom_user_obj.name))
+        log.info("all_order_details", user=username)
         return self.create_response(
             request,
             {'order_details': order_details}
@@ -740,7 +740,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             })
-        log.info("Orders associated with all the stores of the merchant - {} are shown".format(custom_user_obj.role), user=request.user.username)
+        log.info("all_orders_of_merchant", merchant=username)
         return self.create_response(
             request,
             {'order_details': order_details}
