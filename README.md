@@ -3,7 +3,7 @@
 ## Installations
 * ```git clone https://github.com/mukunda-1518/on-boarding-webapp.git```
 * ```git checkout week1-jwt-auth```
-* ``` Add virtualenv related things```
+* ```virtualenv --python=$(which python2) venv``` - For Ubuntu
 * ```pip install -r requirements.txt```
 * ```python manage.py runserver```
 
@@ -12,6 +12,8 @@
 * Django
 * TastyPie
 * JWT Authentication
+* Celery
+* RabbitMQ
 
 ## API Endpoints
 
@@ -35,6 +37,9 @@
 
 ### Orders
 * ```POST /api/v1/create_order/``` - Creates an order
-* ```GET /api/v1/get_orders/{order_id}/``` - Gives the details of given order (items, store details)
+* ```GET /api/v1/get_orders/{order_id}/``` - Gives the details of given order (items, store details of an order)
 * ```GET /api/v1/get_orders/``` - List all the orders of the user
 * ```GET /api/v1/all_orders/``` - List all the orders of all the stores that are owned by the merchant (user). Only accessed by user with merchant role
+* ```POST /api/v1/order/``` - Creates an order
+* ```GET /api/v1/order/{order_id}``` - Gives the details of given order
+* ```GET /api/v1/order/``` - List all the orders of the user
