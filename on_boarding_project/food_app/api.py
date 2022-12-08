@@ -18,6 +18,12 @@ from django.contrib.auth import get_user_model
 from django.conf.urls import url, include
 from django.contrib.auth import authenticate
 from django.db.models import *
+from tastypie import http
+from tastypie.exceptions import ImmediateHttpResponse, Unauthorized
+from wsgiref.handlers import format_date_time
+from time import mktime
+from .tasks import *
+
 
 
 User = get_user_model()
@@ -25,7 +31,7 @@ User = get_user_model()
 log = structlog.getLogger(__name__)
 
 
-class JWTAuthorization(DjangoAuthorization):
+class JWTAuthorization(DjangoAuthorization, CommonMethods):
 
     def is_authenticated(self, request, **kwargs):
         token = request.META.get("HTTP_AUTHORIZATION", None)
@@ -46,6 +52,19 @@ class JWTAuthorization(DjangoAuthorization):
             return False
         except User.DoesNotExist:
             return False
+
+    def get_identifier(self, request):
+        return "%s_%s" % (request.META.get('REMOTE_ADDR', 'noaddr'), request.META.get('REMOTE_HOST', 'nohost'))
+    
+    def read_detail(self, object_list, bundle):
+        return True
+
+    def create_detail(self, object_list, bundle):
+        return True
+
+    def read_list(self, object_list, bundle):
+        return object_list
+
 
 
 class UserResource(ModelResource):
@@ -150,10 +169,11 @@ class CustomUserResource(ModelResource):
 
 class StoreResource(ModelResource, CommonMethods):
     """
-        All the endpoints in it are accessible only user with role as Merchant
+        All the endpoints in it are accessible by user with role as Merchant
+        Implemented celery task for store creation
     """
 
-    merchant = fields.ForeignKey(CustomUserResource, 'merchant', full=True)
+    merchant = fields.ForeignKey(CustomUserResource, 'merchant')
 
     class Meta:
         queryset = Store.objects.all()
@@ -161,6 +181,8 @@ class StoreResource(ModelResource, CommonMethods):
         allowed_methods = ['get', 'post', 'put', 'patch', 'delete']
         authentication = JWTAuthorization()
         authorization = JWTAuthorization()
+        include_resource_uri = False
+        excludes = ["merchant"]
 
     def prepend_urls(self):
 
@@ -172,6 +194,7 @@ class StoreResource(ModelResource, CommonMethods):
             url(r"^get_stores/(?P<pk>.*?)/$", self.wrap_view('get_store'), name='get_store'),
         ]
 
+
     def create_store(self, request, **kwargs):
         self.method_check(request, allowed=['post'])
         self.is_authenticated(request)
@@ -179,16 +202,11 @@ class StoreResource(ModelResource, CommonMethods):
             'CONTENT_TYPE', 'application/json'))
         username = request.user
         custom_user_obj = self.get_custom_user(username)
+        user_id = custom_user_obj.id
         if custom_user_obj.role == "Merchant":
-            store = Store(merchant=custom_user_obj, **data)
-            store.save()
-            log.info("store with name: {} is created by {}".format(store.name, username))
+            add_new_store.delay(data, user_id)
+            add_new_store.apply_async((data, user_id), countdown=30)
             return self.create_response(request, {
-                "name": store.name,
-                "city": store.city,
-                "Address": store.address,
-                "lat": store.lat,
-                "log": store.lon,
                 'success': True
                 },
                 HttpCreated
@@ -242,10 +260,7 @@ class StoreResource(ModelResource, CommonMethods):
     def get_stores(self, request, **kwargs):
         self.method_check(request, allowed=['get'])
         self.is_authenticated(request)
-        # self.is_authenticated(request)
-        # print("Hi" * 10)
         username = request.user
-        print(username)
         custom_user_obj = self.get_custom_user(username)
         if custom_user_obj.role == "Merchant":
             store_objs = Store.objects.filter(merchant=custom_user_obj)
@@ -347,7 +362,7 @@ class ItemResource(ModelResource, CommonMethods):
     Get Items - List view and Detailed view can be accessed by any user who had registered
     """
 
-    store = fields.ToManyField(StoreResource, 'store', full=True)
+    store = fields.ToManyField(StoreResource, 'store')
 
     class Meta:
         queryset = Item.objects.all()
@@ -355,6 +370,7 @@ class ItemResource(ModelResource, CommonMethods):
         allowed_methods = ['get', 'post', 'put', 'patch', 'delete']
         authentication = JWTAuthorization()
         authorization = JWTAuthorization()
+        include_resource_uri = False
 
     def prepend_urls(self):
 
@@ -371,13 +387,11 @@ class ItemResource(ModelResource, CommonMethods):
         self.is_authenticated(request)
         data = self.deserialize(request, request.body, format=request.META.get(
             'CONTENT_TYPE', 'application/json'))
+        store_id = kwargs['store_pk']
         username = request.user
         custom_user_obj = self.get_custom_user(username)
-        store_id = kwargs['store_pk']
         if custom_user_obj.role == "Merchant":
-            item_obj = Item(**data)
-            item_obj.save()
-            StoreItem.objects.create(store_id=store_id, item=item_obj)
+            add_new_item.delay(data, store_id)
             return self.create_response(request, {
                 'success': True
                 },
@@ -389,6 +403,7 @@ class ItemResource(ModelResource, CommonMethods):
                 {'success': False, 'message': 'User do not have access'},
                 HttpUnauthorized
             )
+
 
     def get_item(self, request, **kwargs):
         self.method_check(request, allowed=['get'])
@@ -520,11 +535,13 @@ class OrderResource(ModelResource, CommonMethods):
 
     """
         Creating orders, getting order detailed and list view are user specific.
-        All Orders endpoint is accessed only by the user with merchant role
+        See all orders endpoint is accessed only by the user with merchant role.
+        Implemented celery task for order creation.
+        Implemented custom end points and also overriden the in built methods.
     """
 
-    user = fields.ToOneField(CustomUserResource, 'user', full=True)
-    merchant = fields.ToOneField(CustomUserResource, 'merchant', full=True)
+    user = fields.ToOneField(CustomUserResource, 'user')
+    merchant = fields.ToOneField(CustomUserResource, 'merchant')
     store = fields.ToOneField(StoreResource, 'store', full=True)
     items = fields.ToManyField(ItemResource, 'items', full=True)
 
@@ -534,6 +551,8 @@ class OrderResource(ModelResource, CommonMethods):
         allowed_methods = ['post', 'get']
         authentication = JWTAuthorization()
         authorization = JWTAuthorization()
+        include_resource_uri = False
+        exclude = ["merchant", "user"]
 
     def prepend_urls(self):
 
@@ -543,6 +562,36 @@ class OrderResource(ModelResource, CommonMethods):
             url(r"^get_orders/$", self.wrap_view('get_orders'), name='get_orders'),
             url(r"^all_orders/$", self.wrap_view('all_orders'), name='all_orders'),
         ]
+
+    def obj_create(self, bundle, **kwargs):
+        data = self.deserialize(bundle.request, bundle.request.body, format=bundle.request.META.get(
+            'CONTENT_TYPE', 'application/json'))
+        username = bundle.request.user
+        custom_user_obj = self.get_custom_user(username)
+        data['user_id'] = custom_user_obj.id
+        # create_order.delay(data)
+        create_order.apply_async((data,), countdown=15)
+
+
+    def obj_get(self, bundle, **kwargs):
+        username = bundle.request.user
+        custom_user_obj = self.get_custom_user(username)
+        user_id = custom_user_obj.id
+        return Order.objects.get(id=kwargs['pk'], user__id=user_id)
+
+
+    def obj_get_list(self, bundle, **kwargs):
+        username = bundle.request.user
+        custom_user_obj = self.get_custom_user(username)
+        user_id = custom_user_obj.id
+        return Order.objects.filter(user=custom_user_obj)
+    
+    def dehydrate(self, bundle):
+        if 'merchant' in bundle.data.keys():
+            del bundle.data['merchant']
+        if 'user' in bundle.data.keys():
+            del bundle.data['user']
+        return bundle
 
     def create_order(self, request, **kwargs):
         self.method_check(request, allowed=['post'])

@@ -58,3 +58,741 @@
 [37m INFO     2022-12-05 12:58:01,632   5281 --- 124 [django.server] log_message : "GET /api/v1/get_orders/4/ HTTP/1.1" 200 363[0m
 [33m WARNING  2022-12-05 13:30:44,978   5281 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 401 56[0m
 [33m WARNING  2022-12-05 13:30:44,978   5281 --- 124 [django.server] log_message : "GET /api/v1/all_orders/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-06 13:03:45,125   66244 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-06 13:03:45,125   66244 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-06 13:03:45,126   66244 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-06 13:03:45,126   66244 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[37m INFO     2022-12-06 13:03:53,757   66244 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-06 13:03:53,757   66244 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-06 13:03:53,794   66244 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-06 13:03:53,794   66244 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-06 13:03:53,825   66244 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,825   66244 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,827   66244 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,827   66244 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,833   66244 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,833   66244 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,873   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,873   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,877   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-06 13:03:53,877   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[33m WARNING  2022-12-06 13:04:05,869   66244 --- 152 [django.request] get_response : Not Found: /admin/api/store[0m
+[33m WARNING  2022-12-06 13:04:05,869   66244 --- 152 [django.request] get_response : Not Found: /admin/api/store[0m
+[33m WARNING  2022-12-06 13:04:05,870   66244 --- 124 [django.server] log_message : "GET /admin/api/store HTTP/1.1" 404 5074[0m
+[33m WARNING  2022-12-06 13:04:05,870   66244 --- 124 [django.server] log_message : "GET /admin/api/store HTTP/1.1" 404 5074[0m
+[33m WARNING  2022-12-06 13:04:40,471   66244 --- 152 [django.request] get_response : Not Found: /admin/api/store[0m
+[33m WARNING  2022-12-06 13:04:40,471   66244 --- 152 [django.request] get_response : Not Found: /admin/api/store[0m
+[33m WARNING  2022-12-06 13:04:40,472   66244 --- 124 [django.server] log_message : "GET /admin/api/store?format=json HTTP/1.1" 404 5086[0m
+[33m WARNING  2022-12-06 13:04:40,472   66244 --- 124 [django.server] log_message : "GET /admin/api/store?format=json HTTP/1.1" 404 5086[0m
+[37m INFO     2022-12-06 13:05:23,862   66244 --- 124 [django.server] log_message : "GET /api/v1/store HTTP/1.1" 301 0[0m
+[37m INFO     2022-12-06 13:05:23,862   66244 --- 124 [django.server] log_message : "GET /api/v1/store HTTP/1.1" 301 0[0m
+[31m ERROR    2022-12-06 13:05:23,866   66244 --- 135 [django.request] handle_uncaught_exception : Internal Server Error: /api/v1/store/
+Traceback (most recent call last):
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 268, in wrapper
+    return self._handle_500(request, e)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 292, in _handle_500
+    return self.error_response(request, data, response_class=response_class)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 1275, in error_response
+    serialized = self.serialize(request, errors, desired_format)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 388, in serialize
+    return self._meta.serializer.serialize(data, format, options)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/serializers.py", line 253, in serialize
+    return method(bundle, options)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/serializers.py", line 445, in to_xml
+    "Usage of the XML aspects requires lxml and defusedxml.")
+ImproperlyConfigured: Usage of the XML aspects requires lxml and defusedxml.[0m
+[31m ERROR    2022-12-06 13:05:23,866   66244 --- 135 [django.request] handle_uncaught_exception : Internal Server Error: /api/v1/store/
+Traceback (most recent call last):
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 268, in wrapper
+    return self._handle_500(request, e)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 292, in _handle_500
+    return self.error_response(request, data, response_class=response_class)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 1275, in error_response
+    serialized = self.serialize(request, errors, desired_format)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/resources.py", line 388, in serialize
+    return self._meta.serializer.serialize(data, format, options)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/serializers.py", line 253, in serialize
+    return method(bundle, options)
+  File "/home/mukunda/Desktop/on-boarding-webapp/venv/lib/python2.7/site-packages/tastypie/serializers.py", line 445, in to_xml
+    "Usage of the XML aspects requires lxml and defusedxml.")
+ImproperlyConfigured: Usage of the XML aspects requires lxml and defusedxml.[0m
+[31m ERROR    2022-12-06 13:05:23,906   66244 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 110256[0m
+[31m ERROR    2022-12-06 13:05:23,906   66244 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 110256[0m
+[31m ERROR    2022-12-06 13:05:34,315   66244 --- 124 [django.server] log_message : "GET /api/v1/store/?format=json HTTP/1.1" 500 1089[0m
+[31m ERROR    2022-12-06 13:05:34,315   66244 --- 124 [django.server] log_message : "GET /api/v1/store/?format=json HTTP/1.1" 500 1089[0m
+[31m ERROR    2022-12-06 13:06:20,622   66244 --- 124 [django.server] log_message : "GET /api/v1/store/?format=json HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-06 13:06:20,622   66244 --- 124 [django.server] log_message : "GET /api/v1/store/?format=json HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-06 13:06:30,977   66244 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-06 13:06:30,977   66244 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[37m INFO     2022-12-06 13:08:43,023   66244 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-06 13:08:43,023   66244 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-06 13:08:43,035   66244 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-06 13:08:43,035   66244 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-06 13:08:43,058   66244 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 200 1203[0m
+[37m INFO     2022-12-06 13:08:43,058   66244 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 200 16066[0m
+[37m INFO     2022-12-06 13:08:43,058   66244 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 200 1203[0m
+[37m INFO     2022-12-06 13:08:43,058   66244 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 200 16066[0m
+[37m INFO     2022-12-06 13:08:43,064   66244 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 200 423[0m
+[37m INFO     2022-12-06 13:08:43,064   66244 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 200 423[0m
+[37m INFO     2022-12-06 13:08:43,104   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304[0m
+[37m INFO     2022-12-06 13:08:43,104   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304[0m
+[37m INFO     2022-12-06 13:08:43,106   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348[0m
+[37m INFO     2022-12-06 13:08:43,106   66244 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348[0m
+[31m ERROR    2022-12-07 07:55:39,218   35913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 07:55:39,218   35913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 07:57:50,987   35913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 07:57:50,987   35913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:07:16,172   37999 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:07:16,172   37999 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:07:18,272   37999 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:07:18,272   37999 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:08:08,089   38200 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:08:08,089   38200 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:12:50,448   38914 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:12:50,448   38914 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:13:53,180   39167 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:13:53,180   39167 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:20:25,388   39984 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:20:25,388   39984 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:20:26,649   39984 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:20:26,649   39984 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:23:27,790   40436 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:23:27,790   40436 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:32:32,149   42042 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:32:32,149   42042 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:33:19,364   42286 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:33:19,364   42286 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:33:47,821   42390 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:33:47,821   42390 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:34:35,567   42703 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:34:35,567   42703 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:36:02,688   43309 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:36:02,688   43309 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 960[0m
+[31m ERROR    2022-12-07 09:52:57,561   46421 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 939[0m
+[31m ERROR    2022-12-07 09:52:57,561   46421 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 939[0m
+[37m INFO     2022-12-07 09:53:20,320   46576 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 09:53:20,320   46576 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 09:54:02,978   46576 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-07 09:54:02,978   46576 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-07 09:54:16,370   46576 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 09:54:16,370   46576 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 09:55:16,261   46971 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 09:55:16,261   46971 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:06:34,481   47978 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:06:34,481   47978 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:10:57,698   48380 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:10:57,698   48380 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:13:34,715   49046 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:13:34,715   49046 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:15:27,038   49467 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:15:27,038   49467 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:16:00,685   49634 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 6033[0m
+[37m INFO     2022-12-07 10:16:00,685   49634 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 6033[0m
+[37m INFO     2022-12-07 10:23:54,088   50482 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:23:54,088   50482 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[33m WARNING  2022-12-07 10:24:49,303   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 401 56[0m
+[33m WARNING  2022-12-07 10:24:49,303   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 401 56[0m
+[37m INFO     2022-12-07 10:25:17,586   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-07 10:25:17,586   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[33m WARNING  2022-12-07 10:26:00,730   50482 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/1/[0m
+[33m WARNING  2022-12-07 10:26:00,730   50482 --- 152 [django.request] get_response : Not Found: /api/v1/get_stores/1/[0m
+[33m WARNING  2022-12-07 10:26:00,730   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/1/ HTTP/1.1" 404 33[0m
+[33m WARNING  2022-12-07 10:26:00,730   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/1/ HTTP/1.1" 404 33[0m
+[37m INFO     2022-12-07 10:26:03,718   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-07 10:26:03,718   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/ HTTP/1.1" 200 1138[0m
+[37m INFO     2022-12-07 10:26:06,913   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
+[37m INFO     2022-12-07 10:26:06,913   50482 --- 124 [django.server] log_message : "GET /api/v1/get_stores/2/ HTTP/1.1" 200 162[0m
+[37m INFO     2022-12-07 10:26:48,288   50482 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:26:48,288   50482 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:27:30,909   51090 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:27:30,909   51090 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:29:15,329   51453 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:29:15,329   51453 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:33:58,009   52174 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:33:58,009   52174 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:34:22,074   52336 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:34:22,074   52336 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 10:35:53,951   52641 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:35:53,951   52641 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:36:22,517   52813 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:36:22,517   52813 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:36:54,031   52913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:36:54,031   52913 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1733[0m
+[37m INFO     2022-12-07 10:39:35,512   53451 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:39:35,512   53451 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:40:40,378   54115 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:40:40,378   54115 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:40:45,333   54115 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:40:45,333   54115 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:42:06,677   54365 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:42:06,677   54365 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[33m WARNING  2022-12-07 10:43:47,102   54519 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:43:47,102   54519 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-07 10:44:45,598   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:44:45,598   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:47:54,060   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:47:54,060   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:48:12,549   54878 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-07 10:48:12,549   54878 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-07 10:48:30,431   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:48:30,431   54878 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:48:33,338   54878 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 10:48:33,338   54878 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[33m WARNING  2022-12-07 10:49:24,839   55481 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:49:24,839   55481 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:50:37,691   56252 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:50:37,691   56252 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:51:30,938   56789 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 10:51:30,938   56789 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-07 10:51:42,144   56789 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 10:51:42,144   56789 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[33m WARNING  2022-12-07 11:07:36,711   58470 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 400 106[0m
+[33m WARNING  2022-12-07 11:07:36,711   58470 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 400 106[0m
+[33m WARNING  2022-12-07 11:08:30,331   58684 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 400 106[0m
+[33m WARNING  2022-12-07 11:08:30,331   58684 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 400 106[0m
+[31m ERROR    2022-12-07 11:09:11,482   59239 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 500 1321[0m
+[31m ERROR    2022-12-07 11:09:11,482   59239 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 500 1321[0m
+[37m INFO     2022-12-07 11:09:19,768   59375 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:09:19,768   59375 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:09:52,764   59540 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 552[0m
+[37m INFO     2022-12-07 11:09:52,764   59540 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 552[0m
+[37m INFO     2022-12-07 11:10:04,816   59652 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:10:04,816   59652 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:10:36,262   59925 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:10:36,262   59925 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[31m ERROR    2022-12-07 11:11:00,000   60022 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 500 1309[0m
+[31m ERROR    2022-12-07 11:11:00,000   60022 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 500 1309[0m
+[37m INFO     2022-12-07 11:11:16,706   60162 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-07 11:11:16,706   60162 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-07 11:11:26,845   60162 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:11:26,845   60162 --- 124 [django.server] log_message : "GET /api/v1/store/7/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:16:50,093   61621 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 11:16:50,093   61621 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 11:17:16,463   61621 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 11:17:16,463   61621 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 11:19:14,897   62458 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 11:19:14,897   62458 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[31m ERROR    2022-12-07 11:20:05,687   62821 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1224[0m
+[31m ERROR    2022-12-07 11:20:05,687   62821 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1224[0m
+[31m ERROR    2022-12-07 11:21:38,945   63125 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1105[0m
+[31m ERROR    2022-12-07 11:21:38,945   63125 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1105[0m
+[31m ERROR    2022-12-07 11:23:14,719   63508 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1228[0m
+[31m ERROR    2022-12-07 11:23:14,719   63508 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 500 1228[0m
+[37m INFO     2022-12-07 11:27:19,807   64378 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 11:27:19,807   64378 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 101[0m
+[37m INFO     2022-12-07 11:27:37,050   64378 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[37m INFO     2022-12-07 11:27:37,050   64378 --- 124 [django.server] log_message : "GET /api/v1/store/ HTTP/1.1" 200 1369[0m
+[33m WARNING  2022-12-07 11:37:04,578   65634 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:37:04,578   65634 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:37:21,213   66181 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:37:21,213   66181 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:37:47,271   66369 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:37:47,271   66369 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:12,276   67935 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:12,276   67935 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:53,401   68379 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:53,401   68379 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:55,205   68379 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[33m WARNING  2022-12-07 11:40:55,205   68379 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 400 88[0m
+[31m ERROR    2022-12-07 11:44:16,801   69805 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 500 1102[0m
+[31m ERROR    2022-12-07 11:44:16,801   69805 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 500 1102[0m
+[31m ERROR    2022-12-07 11:44:26,897   69913 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 500 1165[0m
+[31m ERROR    2022-12-07 11:44:26,897   69913 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 500 1165[0m
+[37m INFO     2022-12-07 11:46:47,711   70401 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 11:46:47,711   70401 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 11:48:51,888   70976 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 11:48:51,888   70976 --- 124 [django.server] log_message : "POST /api/v1/store/ HTTP/1.1" 201 0[0m
+[31m ERROR    2022-12-07 11:53:06,370   71605 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 500 1777[0m
+[31m ERROR    2022-12-07 11:53:06,370   71605 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 500 1777[0m
+[37m INFO     2022-12-07 11:53:25,835   71742 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 200 122[0m
+[37m INFO     2022-12-07 11:53:25,835   71742 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 200 122[0m
+[33m WARNING  2022-12-07 11:53:36,089   71742 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-07 11:53:36,089   71742 --- 124 [django.server] log_message : "GET /api/v1/store/3/ HTTP/1.1" 401 0[0m
+[31m ERROR    2022-12-07 12:06:01,386   74566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1089[0m
+[31m ERROR    2022-12-07 12:06:01,386   74566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1089[0m
+[37m INFO     2022-12-07 12:06:23,790   74566 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 33[0m
+[37m INFO     2022-12-07 12:06:23,790   74566 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 33[0m
+[37m INFO     2022-12-07 12:06:40,905   74566 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 33[0m
+[37m INFO     2022-12-07 12:06:40,905   74566 --- 124 [django.server] log_message : "POST /api/v1/create_order/ HTTP/1.1" 200 33[0m
+[37m INFO     2022-12-07 12:06:57,641   74566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:06:57,641   74566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:07:13,234   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:13,234   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:13,270   74566 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:07:13,270   74566 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:07:13,295   74566 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:13,295   74566 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:13,298   74566 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:13,298   74566 --- 124 [django.server] log_message : "GET /static/admin/css/login.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:13,306   74566 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:13,306   74566 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:15,189   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:07:15,189   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:07:26,732   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:26,732   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:26,744   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1771[0m
+[37m INFO     2022-12-07 12:07:26,744   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1771[0m
+[37m INFO     2022-12-07 12:07:26,765   74566 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:07:26,765   74566 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[33m WARNING  2022-12-07 12:07:37,077   74566 --- 160 [django.security.csrf] _reject  : Forbidden (CSRF token missing or incorrect.): /admin/login/[0m
+[33m WARNING  2022-12-07 12:07:37,077   74566 --- 160 [django.security.csrf] _reject  : Forbidden (CSRF token missing or incorrect.): /admin/login/[0m
+[33m WARNING  2022-12-07 12:07:37,080   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2502[0m
+[33m WARNING  2022-12-07 12:07:37,080   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 403 2502[0m
+[37m INFO     2022-12-07 12:07:40,572   74566 --- 124 [django.server] log_message : "GET /admin/login/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:40,572   74566 --- 124 [django.server] log_message : "GET /admin/login/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:40,587   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1771[0m
+[37m INFO     2022-12-07 12:07:40,587   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1771[0m
+[37m INFO     2022-12-07 12:07:44,829   74566 --- 124 [django.server] log_message : "GET /admin/logout/ HTTP/1.1" 200 1010[0m
+[37m INFO     2022-12-07 12:07:44,829   74566 --- 124 [django.server] log_message : "GET /admin/logout/ HTTP/1.1" 200 1010[0m
+[37m INFO     2022-12-07 12:07:46,680   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:46,680   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:46,694   74566 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:07:46,694   74566 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:07:54,636   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:54,636   74566 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:07:54,648   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1768[0m
+[37m INFO     2022-12-07 12:07:54,648   74566 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 1768[0m
+[37m INFO     2022-12-07 12:07:59,645   74566 --- 124 [django.server] log_message : "GET /admin/logout/ HTTP/1.1" 200 1010[0m
+[37m INFO     2022-12-07 12:07:59,645   74566 --- 124 [django.server] log_message : "GET /admin/logout/ HTTP/1.1" 200 1010[0m
+[33m WARNING  2022-12-07 12:08:14,809   75286 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-07 12:08:14,809   75286 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-07 12:08:14,810   75286 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-07 12:08:14,810   75286 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[37m INFO     2022-12-07 12:08:21,826   75286 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:08:21,826   75286 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:08:21,853   75286 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:08:21,853   75286 --- 124 [django.server] log_message : "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1650[0m
+[37m INFO     2022-12-07 12:08:21,913   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:08:21,913   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:08:21,915   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:08:21,915   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:09:22,194   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:09:22,194   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:09:22,219   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:09:22,219   75286 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:09:55,609   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:09:55,609   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1810[0m
+[37m INFO     2022-12-07 12:10:03,497   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:10:03,497   75286 --- 124 [django.server] log_message : "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0[0m
+[37m INFO     2022-12-07 12:10:03,511   75286 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 6145[0m
+[37m INFO     2022-12-07 12:10:03,511   75286 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 6145[0m
+[37m INFO     2022-12-07 12:10:03,539   75286 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:03,539   75286 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:03,540   75286 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:03,540   75286 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,099   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 6890[0m
+[37m INFO     2022-12-07 12:10:08,099   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 6890[0m
+[37m INFO     2022-12-07 12:10:08,122   75286 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,122   75286 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,124   75286 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,125   75286 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,125   75286 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,124   75286 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,129   75286 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,129   75286 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,125   75286 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,125   75286 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,133   75286 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,133   75286 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,133   75286 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,134   75286 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,129   75286 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,133   75286 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,129   75286 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,134   75286 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,137   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:08,137   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:08,156   75286 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:08,156   75286 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 12:10:17,561   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 6890[0m
+[37m INFO     2022-12-07 12:10:17,561   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 6890[0m
+[37m INFO     2022-12-07 12:10:19,611   75286 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-07 12:10:19,611   75286 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-07 12:10:23,146   75286 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 10428[0m
+[37m INFO     2022-12-07 12:10:23,146   75286 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 10428[0m
+[37m INFO     2022-12-07 12:10:23,162   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:23,162   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:37,832   75286 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:10:37,832   75286 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:10:45,154   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7118[0m
+[37m INFO     2022-12-07 12:10:45,154   75286 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7118[0m
+[37m INFO     2022-12-07 12:10:45,171   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:45,171   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:48,657   75286 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 10906[0m
+[37m INFO     2022-12-07 12:10:48,657   75286 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 10906[0m
+[37m INFO     2022-12-07 12:10:48,672   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:10:48,672   75286 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 12:14:46,545   77044 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 7650[0m
+[37m INFO     2022-12-07 12:14:46,545   77044 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 7650[0m
+[37m INFO     2022-12-07 12:16:43,553   77455 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6635[0m
+[37m INFO     2022-12-07 12:16:43,553   77455 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6635[0m
+[37m INFO     2022-12-07 12:21:15,428   77455 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 200 453[0m
+[37m INFO     2022-12-07 12:21:15,428   77455 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 200 453[0m
+[37m INFO     2022-12-07 12:22:24,109   77455 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6635[0m
+[37m INFO     2022-12-07 12:22:24,109   77455 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6635[0m
+[31m ERROR    2022-12-07 12:25:29,739   79157 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 500 1351[0m
+[31m ERROR    2022-12-07 12:25:29,739   79157 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 500 1351[0m
+[31m ERROR    2022-12-07 12:25:38,482   79345 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 500 3129[0m
+[31m ERROR    2022-12-07 12:25:38,482   79345 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 500 3129[0m
+[37m INFO     2022-12-07 12:26:46,065   79677 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 200 453[0m
+[37m INFO     2022-12-07 12:26:46,065   79677 --- 124 [django.server] log_message : "GET /api/v1/order/4/ HTTP/1.1" 200 453[0m
+[33m WARNING  2022-12-07 12:27:03,528   79677 --- 152 [django.request] get_response : Not Found: /api/v1/order/100/[0m
+[33m WARNING  2022-12-07 12:27:03,528   79677 --- 152 [django.request] get_response : Not Found: /api/v1/order/100/[0m
+[33m WARNING  2022-12-07 12:27:03,529   79677 --- 124 [django.server] log_message : "GET /api/v1/order/100/ HTTP/1.1" 404 0[0m
+[33m WARNING  2022-12-07 12:27:03,529   79677 --- 124 [django.server] log_message : "GET /api/v1/order/100/ HTTP/1.1" 404 0[0m
+[31m ERROR    2022-12-07 12:28:50,356   80286 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 500 1064[0m
+[31m ERROR    2022-12-07 12:28:50,356   80286 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 500 1064[0m
+[37m INFO     2022-12-07 12:29:04,925   80456 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:29:04,925   80456 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:29:47,985   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:29:47,985   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:30:50,316   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 2791[0m
+[37m INFO     2022-12-07 12:30:50,316   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 2791[0m
+[37m INFO     2022-12-07 12:31:30,274   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:31:30,274   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3942[0m
+[37m INFO     2022-12-07 12:31:40,070   80663 --- 124 [django.server] log_message : "GET /api/v1/order/5/ HTTP/1.1" 200 315[0m
+[37m INFO     2022-12-07 12:31:40,070   80663 --- 124 [django.server] log_message : "GET /api/v1/order/5/ HTTP/1.1" 200 315[0m
+[33m WARNING  2022-12-07 12:32:53,065   80663 --- 152 [django.request] get_response : Not Found: /api/v1/order/5/[0m
+[33m WARNING  2022-12-07 12:32:53,065   80663 --- 152 [django.request] get_response : Not Found: /api/v1/order/5/[0m
+[33m WARNING  2022-12-07 12:32:53,065   80663 --- 124 [django.server] log_message : "GET /api/v1/order/5/ HTTP/1.1" 404 0[0m
+[33m WARNING  2022-12-07 12:32:53,065   80663 --- 124 [django.server] log_message : "GET /api/v1/order/5/ HTTP/1.1" 404 0[0m
+[37m INFO     2022-12-07 12:33:28,728   80663 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:33:28,728   80663 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:33:49,507   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3247[0m
+[37m INFO     2022-12-07 12:33:49,507   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3247[0m
+[37m INFO     2022-12-07 12:34:03,953   80663 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:34:03,953   80663 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 12:34:15,403   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 12:34:15,403   80663 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 12:34:32,173   80663 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[37m INFO     2022-12-07 12:34:32,173   80663 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[31m ERROR    2022-12-07 12:46:53,938   84299 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:46:53,938   84299 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:49:00,478   84578 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:49:00,478   84578 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:50:04,705   84829 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:50:04,705   84829 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:51:33,885   85109 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:51:33,885   85109 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3722[0m
+[31m ERROR    2022-12-07 12:52:48,437   85513 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[31m ERROR    2022-12-07 12:52:48,437   85513 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[37m INFO     2022-12-07 13:00:45,089   86818 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:00:45,089   86818 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[31m ERROR    2022-12-07 13:01:35,947   87186 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3715[0m
+[31m ERROR    2022-12-07 13:01:35,947   87186 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3715[0m
+[37m INFO     2022-12-07 13:02:05,032   87397 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:02:05,032   87397 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[31m ERROR    2022-12-07 13:02:14,632   87397 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[31m ERROR    2022-12-07 13:02:14,632   87397 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[37m INFO     2022-12-07 13:02:27,707   87592 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:02:27,707   87592 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:02:31,503   87592 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:02:31,503   87592 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:02:58,251   87592 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:02:58,251   87592 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:03:17,511   87592 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:03:17,511   87592 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:03:25,147   87592 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:03:25,147   87592 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:03:25,169   87592 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:03:25,169   87592 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:03:39,272   87592 --- 124 [django.server] log_message : "GET /admin/food_app/order/16/change/ HTTP/1.1" 200 8868[0m
+[37m INFO     2022-12-07 13:03:39,272   87592 --- 124 [django.server] log_message : "GET /admin/food_app/order/16/change/ HTTP/1.1" 200 8868[0m
+[37m INFO     2022-12-07 13:03:39,290   87592 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:03:39,290   87592 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:03:39,293   87592 --- 124 [django.server] log_message : "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 13:03:39,293   87592 --- 124 [django.server] log_message : "GET /static/admin/css/forms.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 13:03:39,299   87592 --- 124 [django.server] log_message : "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 13:03:39,299   87592 --- 124 [django.server] log_message : "GET /static/admin/css/widgets.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 13:03:39,305   87592 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495[0m
+[37m INFO     2022-12-07 13:03:39,305   87592 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495[0m
+[37m INFO     2022-12-07 13:03:39,310   87592 --- 124 [django.server] log_message : "GET /static/admin/js/change_form.js HTTP/1.1" 200 712[0m
+[37m INFO     2022-12-07 13:03:39,310   87592 --- 124 [django.server] log_message : "GET /static/admin/js/change_form.js HTTP/1.1" 200 712[0m
+[37m INFO     2022-12-07 13:03:59,139   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:03:59,139   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:03:59,159   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:03:59,159   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[33m WARNING  2022-12-07 13:03:59,187   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:03:59,187   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:03:59,188   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[33m WARNING  2022-12-07 13:03:59,188   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[37m INFO     2022-12-07 13:03:59,189   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 51066)
+[0m
+[37m INFO     2022-12-07 13:03:59,189   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 51066)
+[0m
+[37m INFO     2022-12-07 13:04:01,830   88007 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:04:01,830   88007 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:04:04,603   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:04,603   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:04,616   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:04:04,616   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[33m WARNING  2022-12-07 13:04:04,638   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:04:04,638   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:04:04,638   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[33m WARNING  2022-12-07 13:04:04,638   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[37m INFO     2022-12-07 13:04:04,639   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 51090)
+[0m
+[37m INFO     2022-12-07 13:04:04,639   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 51090)
+[0m
+[37m INFO     2022-12-07 13:04:11,456   88007 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:04:11,456   88007 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:04:13,881   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:13,881   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:13,898   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:04:13,898   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[33m WARNING  2022-12-07 13:04:13,919   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:04:13,919   88007 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:04:13,919   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[33m WARNING  2022-12-07 13:04:13,919   88007 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[37m INFO     2022-12-07 13:04:13,920   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 45182)
+[0m
+[37m INFO     2022-12-07 13:04:13,920   88007 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 45182)
+[0m
+[37m INFO     2022-12-07 13:04:14,599   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:14,599   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:14,614   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:04:14,614   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:04:14,769   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:14,769   88007 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:04:14,784   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:04:14,784   88007 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:07:31,710   89742 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:07:31,710   89742 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7574[0m
+[37m INFO     2022-12-07 13:07:31,724   89742 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 13:07:31,724   89742 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[33m WARNING  2022-12-07 13:07:31,748   89742 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:07:31,748   89742 --- 152 [django.request] get_response : Not Found: /favicon.ico[0m
+[33m WARNING  2022-12-07 13:07:31,749   89742 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[33m WARNING  2022-12-07 13:07:31,749   89742 --- 124 [django.server] log_message : "GET /favicon.ico HTTP/1.1" 404 2080[0m
+[37m INFO     2022-12-07 13:07:31,749   89742 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 59640)
+[0m
+[37m INFO     2022-12-07 13:07:31,749   89742 --- 78 [django.server] handle_error : - Broken pipe from ('127.0.0.1', 59640)
+[0m
+[37m INFO     2022-12-07 13:07:41,641   89742 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[37m INFO     2022-12-07 13:07:41,641   89742 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[37m INFO     2022-12-07 13:09:58,640   90564 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:09:58,640   90564 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 3703[0m
+[37m INFO     2022-12-07 13:11:36,568   91004 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:11:36,568   91004 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:15:35,449   91766 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[37m INFO     2022-12-07 13:15:35,449   91766 --- 124 [django.server] log_message : "GET /api/v1/order/3/ HTTP/1.1" 200 587[0m
+[37m INFO     2022-12-07 13:18:48,848   92503 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:18:48,848   92503 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[31m ERROR    2022-12-07 13:20:07,911   93471 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3698[0m
+[31m ERROR    2022-12-07 13:20:07,911   93471 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 3698[0m
+[37m INFO     2022-12-07 13:20:49,945   94180 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:20:49,945   94180 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:21:46,463   94566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:21:46,463   94566 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[31m ERROR    2022-12-07 13:22:58,763   94844 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[31m ERROR    2022-12-07 13:22:58,763   94844 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1588[0m
+[37m INFO     2022-12-07 13:23:53,435   95195 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:23:53,435   95195 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[31m ERROR    2022-12-07 13:28:56,169   96717 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1096[0m
+[31m ERROR    2022-12-07 13:28:56,169   96717 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 500 1096[0m
+[37m INFO     2022-12-07 13:30:16,480   97099 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:30:16,480   97099 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:31:36,099   98040 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 13:31:36,099   98040 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 16:11:50,295   98040 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 12340[0m
+[37m INFO     2022-12-07 16:11:50,295   98040 --- 124 [django.server] log_message : "GET /admin/food_app/orderitem/ HTTP/1.1" 200 12340[0m
+[37m INFO     2022-12-07 16:11:50,314   98040 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,314   98040 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,316   98040 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,316   98040 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,318   98040 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,319   98040 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,315   98040 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,322   98040 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,323   98040 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,316   98040 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,316   98040 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,325   98040 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,319   98040 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,323   98040 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,322   98040 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,318   98040 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,325   98040 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,328   98040 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:11:50,328   98040 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:11:50,344   98040 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:50,344   98040 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,008   98040 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-07 16:11:56,008   98040 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-07 16:11:56,024   98040 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,024   98040 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,028   98040 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,028   98040 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,028   98040 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:56,028   98040 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-07 16:11:57,785   98040 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7802[0m
+[37m INFO     2022-12-07 16:11:57,785   98040 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 7802[0m
+[37m INFO     2022-12-07 16:11:57,800   98040 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:11:57,800   98040 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:21:16,753   101780 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 979[0m
+[37m INFO     2022-12-07 16:21:16,753   101780 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 979[0m
+[37m INFO     2022-12-07 16:22:20,644   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:20,644   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:21,077   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:21,077   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:21,612   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:21,612   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:22,249   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:22,249   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:22,848   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:22,848   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,197   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,197   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,562   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,562   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,922   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:23,922   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:25,571   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:25,571   101780 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-07 16:22:37,550   101780 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 1888[0m
+[37m INFO     2022-12-07 16:22:37,550   101780 --- 124 [django.server] log_message : "GET /api/v1/get_stores/10/get_items/ HTTP/1.1" 200 1888[0m
+[37m INFO     2022-12-07 16:23:44,951   101780 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 16:23:44,951   101780 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 16:25:29,753   101780 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 16:25:29,753   101780 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-07 16:26:53,342   101780 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 8258[0m
+[37m INFO     2022-12-07 16:26:53,342   101780 --- 124 [django.server] log_message : "GET /admin/food_app/order/ HTTP/1.1" 200 8258[0m
+[37m INFO     2022-12-07 16:26:53,362   101780 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:26:53,362   101780 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-07 16:27:16,007   101780 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6733[0m
+[37m INFO     2022-12-07 16:27:16,007   101780 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6733[0m
+[37m INFO     2022-12-07 16:36:53,185   105167 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6557[0m
+[37m INFO     2022-12-07 16:36:53,185   105167 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6557[0m
+[37m INFO     2022-12-07 16:37:56,605   105583 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6425[0m
+[37m INFO     2022-12-07 16:37:56,605   105583 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6425[0m
+[31m ERROR    2022-12-07 16:39:16,105   106206 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 500 1251[0m
+[31m ERROR    2022-12-07 16:39:16,105   106206 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 500 1251[0m
+[37m INFO     2022-12-07 16:39:36,076   106367 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6425[0m
+[37m INFO     2022-12-07 16:39:36,076   106367 --- 124 [django.server] log_message : "GET /api/v1/order/ HTTP/1.1" 200 6425[0m
+[37m INFO     2022-12-08 04:37:21,753   4976 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:37:21,753   4976 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:40:26,736   6349 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:40:26,736   6349 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:44:35,863   7900 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:44:35,863   7900 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:44:53,456   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:44:53,456   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[33m WARNING  2022-12-08 04:45:33,565   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:33,565   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:33,565   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-08 04:45:33,565   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-08 04:45:33,752   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:33,752   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:33,752   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-08 04:45:33,752   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-08 04:45:37,856   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:37,856   8336 --- 152 [django.request] get_response : Not Found: /[0m
+[33m WARNING  2022-12-08 04:45:37,857   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[33m WARNING  2022-12-08 04:45:37,857   8336 --- 124 [django.server] log_message : "GET / HTTP/1.1" 404 2029[0m
+[37m INFO     2022-12-08 04:45:44,667   8336 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 6145[0m
+[37m INFO     2022-12-08 04:45:44,667   8336 --- 124 [django.server] log_message : "GET /admin/ HTTP/1.1" 200 6145[0m
+[37m INFO     2022-12-08 04:45:44,709   8336 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 200 16066[0m
+[37m INFO     2022-12-08 04:45:44,709   8336 --- 124 [django.server] log_message : "GET /static/admin/css/base.css HTTP/1.1" 200 16066[0m
+[37m INFO     2022-12-08 04:45:44,709   8336 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412[0m
+[37m INFO     2022-12-08 04:45:44,709   8336 --- 124 [django.server] log_message : "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412[0m
+[37m INFO     2022-12-08 04:45:44,713   8336 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 200 423[0m
+[37m INFO     2022-12-08 04:45:44,713   8336 --- 124 [django.server] log_message : "GET /static/admin/css/fonts.css HTTP/1.1" 200 423[0m
+[37m INFO     2022-12-08 04:45:44,718   8336 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331[0m
+[37m INFO     2022-12-08 04:45:44,718   8336 --- 124 [django.server] log_message : "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331[0m
+[37m INFO     2022-12-08 04:45:44,719   8336 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380[0m
+[37m INFO     2022-12-08 04:45:44,719   8336 --- 124 [django.server] log_message : "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380[0m
+[37m INFO     2022-12-08 04:45:44,762   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:44,762   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:44,763   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:44,763   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:44,770   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564[0m
+[37m INFO     2022-12-08 04:45:44,770   8336 --- 124 [django.server] log_message : "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564[0m
+[37m INFO     2022-12-08 04:45:47,691   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:45:47,691   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:45:47,716   8336 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,717   8336 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,717   8336 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,716   8336 --- 124 [django.server] log_message : "GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,717   8336 --- 124 [django.server] log_message : "GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,717   8336 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,722   8336 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,722   8336 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,722   8336 --- 124 [django.server] log_message : "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,722   8336 --- 124 [django.server] log_message : "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:45:47,728   8336 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,726   8336 --- 124 [django.server] log_message : "GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,728   8336 --- 124 [django.server] log_message : "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,730   8336 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,730   8336 --- 124 [django.server] log_message : "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[37m INFO     2022-12-08 04:45:47,751   8336 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331[0m
+[37m INFO     2022-12-08 04:45:47,751   8336 --- 124 [django.server] log_message : "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331[0m
+[37m INFO     2022-12-08 04:45:54,839   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:45:54,839   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:46:03,477   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:46:03,477   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:46:03,491   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:46:03,491   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:46:04,473   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:46:04,473   8336 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8373[0m
+[37m INFO     2022-12-08 04:46:04,486   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:46:04,486   8336 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:46:15,185   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:46:15,185   8336 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[33m WARNING  2022-12-08 04:51:44,075   12269 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 401 0[0m
+[33m WARNING  2022-12-08 04:51:44,075   12269 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 401 0[0m
+[37m INFO     2022-12-08 04:52:30,244   12269 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[37m INFO     2022-12-08 04:52:30,244   12269 --- 124 [django.server] log_message : "POST /api/v1/user/login/ HTTP/1.1" 200 220[0m
+[31m ERROR    2022-12-08 04:52:54,717   12269 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 1086[0m
+[31m ERROR    2022-12-08 04:52:54,717   12269 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 500 1086[0m
+[37m INFO     2022-12-08 04:53:08,492   12839 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:08,492   12839 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:32,254   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:32,254   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:46,830   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:46,830   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:47,956   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:47,956   12947 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:53:54,204   12947 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8825[0m
+[37m INFO     2022-12-08 04:53:54,204   12947 --- 124 [django.server] log_message : "GET /admin/food_app/item/ HTTP/1.1" 200 8825[0m
+[37m INFO     2022-12-08 04:53:54,224   12947 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:53:54,224   12947 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:53:55,546   12947 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-08 04:53:55,546   12947 --- 124 [django.server] log_message : "GET /admin/food_app/ HTTP/1.1" 200 4285[0m
+[37m INFO     2022-12-08 04:53:57,379   12947 --- 124 [django.server] log_message : "GET /admin/food_app/store/ HTTP/1.1" 200 7323[0m
+[37m INFO     2022-12-08 04:53:57,379   12947 --- 124 [django.server] log_message : "GET /admin/food_app/store/ HTTP/1.1" 200 7323[0m
+[37m INFO     2022-12-08 04:53:57,398   12947 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:53:57,398   12947 --- 124 [django.server] log_message : "GET /admin/jsi18n/ HTTP/1.1" 200 3217[0m
+[37m INFO     2022-12-08 04:54:48,485   13659 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 04:54:48,485   13659 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 05:02:08,665   17077 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 05:02:08,665   17077 --- 124 [django.server] log_message : "POST /api/v1/get_stores/10/create_item/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 05:03:11,212   17077 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-08 05:03:11,212   17077 --- 124 [django.server] log_message : "POST /api/v1/order/ HTTP/1.1" 201 0[0m
+[37m INFO     2022-12-08 05:04:15,548   17628 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
+[37m INFO     2022-12-08 05:04:15,548   17628 --- 124 [django.server] log_message : "POST /api/v1/create_store/ HTTP/1.1" 201 17[0m
