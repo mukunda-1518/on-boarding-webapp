@@ -569,8 +569,8 @@ class OrderResource(ModelResource, CommonMethods):
         username = bundle.request.user
         custom_user_obj = self.get_custom_user(username)
         data['user_id'] = custom_user_obj.id
-        # create_order.delay(data)
-        create_order.apply_async((data,), countdown=15)
+        create_order.delay(data)
+        # create_order.apply_async((data,), countdown=15)
 
 
     def obj_get(self, bundle, **kwargs):
@@ -649,7 +649,7 @@ class OrderResource(ModelResource, CommonMethods):
                 'store_details': store_details,
                 'items': items
             }
-            log.info("Only requested order details of user - {} are shown".format(custom_user_obj.name))
+            log.info("order_details", order_id=order_id)
             return self.create_response(
                 request,
                 {'order_details': order_details}
