@@ -128,7 +128,7 @@ class UserResource(ModelResource):
         """
         self.method_check(request, allowed=['post'])
         data = self.deserialize(request, request.body, format=request.META.get(
-            'CONTENT_TYPE', 'application/json'))  # Got json data convert to dict
+            'CONTENT_TYPE', 'application/json'))  # Got serialised data convert to dict
         username = data['username']
         password = data['password']
         user = authenticate(username=username, password=password)
