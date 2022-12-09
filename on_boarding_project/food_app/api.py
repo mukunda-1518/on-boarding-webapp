@@ -35,6 +35,8 @@ class JWTAuthorization(DjangoAuthorization, CommonMethods):
 
     def is_authenticated(self, request, **kwargs):
         token = request.META.get("HTTP_AUTHORIZATION", None)
+        if not token:
+            return False
         token = token.split(" ")[1]
         try:
             payload = jwt.decode(
@@ -205,7 +207,7 @@ class StoreResource(ModelResource, CommonMethods):
         user_id = custom_user_obj.id
         if custom_user_obj.role == "Merchant":
             add_new_store.delay(data, user_id)
-            add_new_store.apply_async((data, user_id), countdown=30)
+            # add_new_store.apply_async((data, user_id), countdown=30)
             return self.create_response(request, {
                 'success': True
                 },
@@ -611,10 +613,12 @@ class OrderResource(ModelResource, CommonMethods):
             order_item = OrderItem(order=order_obj, item_id=item_id)
             orders_list.append(order_item)
         OrderItem.objects.bulk_create(orders_list)
+        log.info("order_created", order_id=order_obj.id, username=username)
 
         return self.create_response(
                     request,
-                    {'order_id': order_obj.id, 'success': True}
+                    {'order_id': order_obj.id, 'success': True},
+                    HttpCreated
                 )
 
     def get_order(self, request, **kwargs):
