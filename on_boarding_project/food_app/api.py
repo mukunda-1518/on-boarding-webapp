@@ -206,6 +206,9 @@ class StoreResource(ModelResource, CommonMethods):
         custom_user_obj = self.get_custom_user(username)
         user_id = custom_user_obj.id
         if custom_user_obj.role == "Merchant":
+            # store = Store(merchant_id=user_id, **data)
+            # store.save()
+            # log.info("store_created", store_id=store.pk)
             add_new_store.delay(data, user_id)
             # add_new_store.apply_async((data, user_id), countdown=30)
             return self.create_response(request, {

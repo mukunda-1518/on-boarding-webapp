@@ -30,6 +30,8 @@ if os.path.isfile(dotenv_file):
 
 SECRET_KEY = os.environ['SECRET_KEY']
 # SECRET_KEY_1 = os.environ["SECRET_KEY"]
+USER = os.environ['USER']
+PASSWORD = os.environ['PASSWORD']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -85,10 +87,30 @@ WSGI_APPLICATION = 'on_boarding_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'Up123pU',
+        'HOST':'localhost',
+        'PORT':'',
+    },
+    'TEST': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'test_mydb',
+        'USER': 'root',
+        'PASSWORD': 'Up123pU',
+        'HOST':'',
+        'PORT':'',
     }
 }
 
