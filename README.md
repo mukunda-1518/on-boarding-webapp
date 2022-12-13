@@ -43,3 +43,5 @@
 * ```POST /api/v1/order/``` - Creates an order
 * ```GET /api/v1/order/{order_id}``` - Gives the details of given order
 * ```GET /api/v1/order/``` - List all the orders of the user
+
+#### Postman Collection (API Docs) - https://www.postman.com/mukundapm/workspace/public-workspace/collection/24604602-03ffd114-9b78-4915-9772-0b7603e1abf7?ctx=documentation
