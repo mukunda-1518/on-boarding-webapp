@@ -23,6 +23,11 @@ def custom_user(db):
     custom_user = CustomUser.objects.create(user = user, name = "Merchant", role = "Merchant")
     return custom_user
 
+@pytest.fixture
+def custom_consumer_data(db):
+    user = User.objects.create_user(username = "Consumer", password = "password@123", is_staff=True, email="consumer@gmail.com")
+    custom_user = CustomUser.objects.create(user = user, name = "Consumer", role = "Consumer")
+    return custom_user
 
 @pytest.fixture
 def store_post_data():
@@ -67,13 +72,13 @@ def stores_post_data():
 
 
 @pytest.fixture
-def store_get_data(store_post_data, custom_user):
+def store_get_data(db, store_post_data, custom_user):
     store_obj = Store.objects.create(merchant=custom_user, **store_post_data)
     return store_obj
 
 
 @pytest.fixture
-def stores_get_data(stores_post_data, custom_user):
+def stores_get_data(db, stores_post_data, custom_user):
     store_obj1 = Store.objects.create(merchant=custom_user, **stores_post_data[0])
     store_obj2 = Store.objects.create(merchant=custom_user, **stores_post_data[1])
     store_obj3 = Store.objects.create(merchant=custom_user, **stores_post_data[2])
@@ -91,7 +96,48 @@ def stores_put_data():
         }
     return update_store_data
     
+  
+@pytest.fixture
+def prepare_items_data():
+    items = [
+        {
+            "name": "new item1",
+            "description": "Description",
+            "price": 200,
+            "food_type": "Vegetarian"
+        },
+        {
+            "name": "new item2",
+            "description": "Description",
+            "price": 100,
+            "food_type": "Vegetarian"
+        },
+        {
+            "name": "new item3",
+            "description": "Description",
+            "price": 300,
+            "food_type": "Vegetarian"
+        }   
+    ] 
+    return items
+  
+@pytest.fixture
+def populate_items(db, prepare_items_data):
+    item_objs = [ Item.objects.create(**item) for item in prepare_items_data]
+    return item_objs
     
+
+@pytest.fixture
+def create_store_items(db, store_get_data, populate_items):
+    store_items = [StoreItem.objects.create(item=item, store=store_get_data) for item in populate_items] 
+    return store_items
+    
+@pytest.fixture
+def populate_order(db, store_get_data, custom_user, custom_consumer_data, populate_items):
+    order_obj = Order.objects.create(store=store_get_data, merchant=custom_user, user=custom_consumer_data)
+    order_items_objs = [OrderItem.objects.create(order=order_obj, item=item) for item in populate_items]
+    return order_obj
+        
     
 
 @pytest.fixture(scope="session")

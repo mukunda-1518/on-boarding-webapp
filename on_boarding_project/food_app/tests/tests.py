@@ -252,16 +252,84 @@ class TestStoreResource:
         
         # Assert
         assert response.status_code == 200
-        
+ 
+ 
+ 
+@pytest.mark.django_db       
 class TestOrderResource:
     
-    def test_create_order():
-        pass
+    def test_create_order(self, client, create_store_items, consumer_data, store_get_data, populate_items):
+        # Arrange
+        data = {
+            "username": consumer_data.username,
+            "password": "password@123"
+        }
+        response = client.post('/api/v1/user/login/', data=json.dumps(data),
+                    content_type="application/json")
+        response = response.json()
+        access_token = response['access_token']
+        
+        body = {
+            'item_ids': [item.id for item in populate_items],
+            'store_id': store_get_data.id
+        }
+        
+        # Act
+        response = client.post(
+            '/api/v1/order/', data=json.dumps(body), content_type="application/json",
+            **{'HTTP_AUTHORIZATION': 'Bearer' + " " + access_token}
+        )
+        
+        
+        # Assert
+        assert response.status_code == 201
+        
     
     
-    def test_get_order_deatails():
-        pass
+    def test_get_order_deatails(self, client, populate_order, custom_consumer_data):
+        # Arrange
+        data = {
+            "username": custom_consumer_data.name,
+            "password": "password@123"
+        }
+        response = client.post('/api/v1/user/login/', data=json.dumps(data),
+                    content_type="application/json")
+        response = response.json()
+        access_token = response['access_token']
+        
+        
+        # Act
+        response = client.get(
+            '/api/v1/order/{}/'.format(populate_order.id), content_type="application/json",
+            **{'HTTP_AUTHORIZATION': 'Bearer' + " " + access_token}
+        )
+        
+        
+        # Assert
+        assert response.status_code == 200
+        assert response.json()['id'] == populate_order.id
     
-    
-    def test_get_orders_details():
-        pass
+    def test_get_orders_details(self, client, populate_order, custom_consumer_data):
+        
+        # Arrange
+        data = {
+            "username": custom_consumer_data.name,
+            "password": "password@123"
+        }
+        response = client.post('/api/v1/user/login/', data=json.dumps(data),
+                    content_type="application/json")
+        response = response.json()
+        access_token = response['access_token']
+        
+        
+        # Act
+        response = client.get(
+            '/api/v1/order/', content_type="application/json",
+            **{'HTTP_AUTHORIZATION': 'Bearer' + " " + access_token}
+        )
+        
+        
+        # Assert
+        assert response.status_code == 200
+        response = response.json()
+        assert response['objects'][0]['id'] == populate_order.id
