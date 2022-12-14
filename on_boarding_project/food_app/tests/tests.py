@@ -52,36 +52,6 @@ def test_user_with_invalid_password(client, merchant_data):
     assert response.status_code == 401
 
 
-@pytest.mark.django_db
-def test_create_store_with_valid_data(client, merchant_data, store_post_data):
-    # Arrange
-    data = {
-        "username": merchant_data.username,
-        "password": "password@123"
-    }
-
-    response = client.post('/api/v1/user/login/', data=json.dumps(data),
-                content_type="application/json")
-    response = response.json()
-    access_token = response['access_token']
-
-    # Act
-    response = client.post(
-        '/api/v1/create_store/', data=json.dumps(store_post_data), content_type="application/json",
-        **{'HTTP_AUTHORIZATION': 'Bearer' + " " + access_token}
-    )
-
-    # import pdb
-    # pdb.set_trace()
-
-    # Assert
-    from django.contrib.auth import settings
-    print(settings.DATABASES)
-    assert response.status_code == 201
-    # assert Store.objects.all().count() == 1
-    
-
-    
 class TestStoreResource:
     
     @pytest.mark.django_db
@@ -102,9 +72,9 @@ class TestStoreResource:
             '/api/v1/create_store/', data=json.dumps(store_post_data), content_type="application/json",
             **{'HTTP_AUTHORIZATION': 'Bearer' + " " + access_token}
         )
-
-        # import pdb
-        # pdb.set_trace()
+        time.sleep(15)
+        import pdb
+        pdb.set_trace()
 
         # Assert
         from django.contrib.auth import settings

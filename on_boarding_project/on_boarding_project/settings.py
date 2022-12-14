@@ -16,6 +16,9 @@ import structlog
 
 import dotenv # <- New
 
+from dotenv import load_dotenv
+load_dotenv()
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,14 +27,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
+# dotenv_file = os.path.join(BASE_DIR, ".env")
+# if os.path.isfile(dotenv_file):
+#     dotenv.load_dotenv(dotenv_file)
 
-SECRET_KEY = os.environ['SECRET_KEY']
-# SECRET_KEY_1 = os.environ["SECRET_KEY"]
-USER = os.environ['USER']
-PASSWORD = os.environ['PASSWORD']
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+USER = str(os.getenv('DB_USER'))
+PASSWORD = str(os.getenv('DB_PASSWORD'))
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -93,22 +95,23 @@ WSGI_APPLICATION = 'on_boarding_project.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-
+print(USER)
+print(PASSWORD)
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mydb',
-        'USER': 'root',
-        'PASSWORD': 'Up123pU',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
         'HOST':'localhost',
         'PORT':'',
     },
     'TEST': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_mydb',
-        'USER': 'root',
-        'PASSWORD': 'Up123pU',
+        'USER': USER,
+        'PASSWORD': PASSWORD,
         'HOST':'',
         'PORT':'',
     }
