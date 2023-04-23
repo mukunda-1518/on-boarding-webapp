@@ -206,6 +206,9 @@ class StoreResource(ModelResource, CommonMethods):
         custom_user_obj = self.get_custom_user(username)
         user_id = custom_user_obj.id
         if custom_user_obj.role == "Merchant":
+            # store = Store(merchant_id=user_id, **data)
+            # store.save()
+            # log.info("store_created", store_id=store.pk)
             add_new_store.delay(data, user_id)
             # add_new_store.apply_async((data, user_id), countdown=30)
             return self.create_response(request, {
@@ -572,6 +575,7 @@ class OrderResource(ModelResource, CommonMethods):
         custom_user_obj = self.get_custom_user(username)
         data['user_id'] = custom_user_obj.id
         create_order.delay(data)
+            
         # create_order.apply_async((data,), countdown=15)
 
 
@@ -604,7 +608,14 @@ class OrderResource(ModelResource, CommonMethods):
         custom_user_obj = self.get_custom_user(username)
         item_ids = data['item_ids']  # Assuming all the items are in db
         store_id = data['store_id']  # Assuming store is in db
-        store_obj = Store.objects.get(id=store_id)
+        try:
+            store_obj = Store.objects.get(id=store_id)
+        except Store.DoesNotExist:
+            return self.create_response(
+                request,
+                {'message': 'Store not found'},
+                HttpNotFound
+            )
         merchant_obj = store_obj.merchant
 
         order_obj = Order.objects.create(store=store_obj, merchant=merchant_obj, user=custom_user_obj)

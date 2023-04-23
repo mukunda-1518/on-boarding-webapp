@@ -2,6 +2,7 @@ from celery import shared_task
 from .models import *
 import structlog
 from tastypie import http
+from tastypie.exceptions import NotFound 
 
 log = structlog.getLogger(__name__)
 
@@ -12,12 +13,12 @@ def create_order(data):
     try:
        store_obj = Store.objects.get(id=store_id) 
     except Store.DoesNotExist:
-        raise http.HttpNotFound()
-    
+        raise NotFound("store_id: {} is not found".format(store_id))
+
     item_ids = data['item_ids']  
     item_objs = Item.objects.filter(id__in=item_ids)
     if len(item_ids) != len(item_objs):
-        raise http.HttpNotFound()
+        raise NotFound("Some of the items are not found: {}".format(item_ids))
     
     merchant_obj = store_obj.merchant
     user_obj = CustomUser.objects.get(id=data['user_id'])
