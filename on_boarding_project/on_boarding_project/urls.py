@@ -19,14 +19,15 @@ from tastypie.api import Api
 from django.contrib.auth.models import User
 from django.db import models
 from tastypie.models import create_api_key
-# from food_app.api import MerchantResource, StoreItemResource, StoreResource, ItemResource, UserResource
-from food_app.api import UserResource, StoreResource, ItemResource, OrderResource
+from food_app.api import MerchantResource, StoreItemResource, StoreResource, ItemResource, UserResource
+
 
 v1_api = Api(api_name='v1')
+v1_api.register(MerchantResource())
+v1_api.register(StoreItemResource())
+v1_api.register(StoreResource())
 v1_api.register(ItemResource())
 v1_api.register(UserResource())
-v1_api.register(StoreResource())
-v1_api.register(OrderResource())
 
 models.signals.post_save.connect(create_api_key, sender=User)
 
