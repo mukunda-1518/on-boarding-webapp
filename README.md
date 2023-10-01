@@ -2,8 +2,8 @@
 
 ## Installations
 * ```git clone https://github.com/mukunda-1518/on-boarding-webapp.git```
-* ```git checkout week1-jwt-auth```
-* ```virtualenv --python=$(which python2) venv``` - For Ubuntu
+* ```git checkout master```
+* ```set up virtualenv, use python2 to create virtual env,```
 * ```pip install -r requirements.txt```
 * ```python manage.py runserver```
 
